@@ -14,7 +14,9 @@ add_executable(Logging_app
             src/LogManager.cpp
             src/FileSinkImpl.cpp
             src/ConsoleSinkImpl.cpp
-            src/LogMessage.cpp)
+            src/LogMessage.cpp
+            src/FileTelemetrySourceImpl.cpp
+            src/SafeFile.cpp)
 
 target_include_directories(Logging_app PRIVATE ${PROJECT_SOURCE_DIR}/inc)
 

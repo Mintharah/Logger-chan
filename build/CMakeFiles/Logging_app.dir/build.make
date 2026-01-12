@@ -139,13 +139,43 @@ CMakeFiles/Logging_app.dir/src/LogMessage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Logging_app.dir/src/LogMessage.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yasmine/Desktop/Linux_Project/src/LogMessage.cpp -o CMakeFiles/Logging_app.dir/src/LogMessage.cpp.s
 
+CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o: CMakeFiles/Logging_app.dir/flags.make
+CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o: ../src/FileTelemetrySourceImpl.cpp
+CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o: CMakeFiles/Logging_app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yasmine/Desktop/Linux_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o -MF CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o.d -o CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o -c /home/yasmine/Desktop/Linux_Project/src/FileTelemetrySourceImpl.cpp
+
+CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yasmine/Desktop/Linux_Project/src/FileTelemetrySourceImpl.cpp > CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.i
+
+CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yasmine/Desktop/Linux_Project/src/FileTelemetrySourceImpl.cpp -o CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.s
+
+CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o: CMakeFiles/Logging_app.dir/flags.make
+CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o: ../src/SafeFile.cpp
+CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o: CMakeFiles/Logging_app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yasmine/Desktop/Linux_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o -MF CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o.d -o CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o -c /home/yasmine/Desktop/Linux_Project/src/SafeFile.cpp
+
+CMakeFiles/Logging_app.dir/src/SafeFile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Logging_app.dir/src/SafeFile.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yasmine/Desktop/Linux_Project/src/SafeFile.cpp > CMakeFiles/Logging_app.dir/src/SafeFile.cpp.i
+
+CMakeFiles/Logging_app.dir/src/SafeFile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Logging_app.dir/src/SafeFile.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yasmine/Desktop/Linux_Project/src/SafeFile.cpp -o CMakeFiles/Logging_app.dir/src/SafeFile.cpp.s
+
 # Object files for target Logging_app
 Logging_app_OBJECTS = \
 "CMakeFiles/Logging_app.dir/src/main.cpp.o" \
 "CMakeFiles/Logging_app.dir/src/LogManager.cpp.o" \
 "CMakeFiles/Logging_app.dir/src/FileSinkImpl.cpp.o" \
 "CMakeFiles/Logging_app.dir/src/ConsoleSinkImpl.cpp.o" \
-"CMakeFiles/Logging_app.dir/src/LogMessage.cpp.o"
+"CMakeFiles/Logging_app.dir/src/LogMessage.cpp.o" \
+"CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o" \
+"CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o"
 
 # External object files for target Logging_app
 Logging_app_EXTERNAL_OBJECTS =
@@ -155,9 +185,11 @@ Logging_app: CMakeFiles/Logging_app.dir/src/LogManager.cpp.o
 Logging_app: CMakeFiles/Logging_app.dir/src/FileSinkImpl.cpp.o
 Logging_app: CMakeFiles/Logging_app.dir/src/ConsoleSinkImpl.cpp.o
 Logging_app: CMakeFiles/Logging_app.dir/src/LogMessage.cpp.o
+Logging_app: CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o
+Logging_app: CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o
 Logging_app: CMakeFiles/Logging_app.dir/build.make
 Logging_app: CMakeFiles/Logging_app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yasmine/Desktop/Linux_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Logging_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yasmine/Desktop/Linux_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Logging_app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Logging_app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

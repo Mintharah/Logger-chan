@@ -177,6 +177,30 @@ src/FileSinkImpl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logging_app.dir/build.make CMakeFiles/Logging_app.dir/src/FileSinkImpl.cpp.s
 .PHONY : src/FileSinkImpl.cpp.s
 
+src/FileTelemetrySourceImpl.o: src/FileTelemetrySourceImpl.cpp.o
+.PHONY : src/FileTelemetrySourceImpl.o
+
+# target to build an object file
+src/FileTelemetrySourceImpl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logging_app.dir/build.make CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.o
+.PHONY : src/FileTelemetrySourceImpl.cpp.o
+
+src/FileTelemetrySourceImpl.i: src/FileTelemetrySourceImpl.cpp.i
+.PHONY : src/FileTelemetrySourceImpl.i
+
+# target to preprocess a source file
+src/FileTelemetrySourceImpl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logging_app.dir/build.make CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.i
+.PHONY : src/FileTelemetrySourceImpl.cpp.i
+
+src/FileTelemetrySourceImpl.s: src/FileTelemetrySourceImpl.cpp.s
+.PHONY : src/FileTelemetrySourceImpl.s
+
+# target to generate assembly for a file
+src/FileTelemetrySourceImpl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logging_app.dir/build.make CMakeFiles/Logging_app.dir/src/FileTelemetrySourceImpl.cpp.s
+.PHONY : src/FileTelemetrySourceImpl.cpp.s
+
 src/LogManager.o: src/LogManager.cpp.o
 .PHONY : src/LogManager.o
 
@@ -225,6 +249,30 @@ src/LogMessage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logging_app.dir/build.make CMakeFiles/Logging_app.dir/src/LogMessage.cpp.s
 .PHONY : src/LogMessage.cpp.s
 
+src/SafeFile.o: src/SafeFile.cpp.o
+.PHONY : src/SafeFile.o
+
+# target to build an object file
+src/SafeFile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logging_app.dir/build.make CMakeFiles/Logging_app.dir/src/SafeFile.cpp.o
+.PHONY : src/SafeFile.cpp.o
+
+src/SafeFile.i: src/SafeFile.cpp.i
+.PHONY : src/SafeFile.i
+
+# target to preprocess a source file
+src/SafeFile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logging_app.dir/build.make CMakeFiles/Logging_app.dir/src/SafeFile.cpp.i
+.PHONY : src/SafeFile.cpp.i
+
+src/SafeFile.s: src/SafeFile.cpp.s
+.PHONY : src/SafeFile.s
+
+# target to generate assembly for a file
+src/SafeFile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Logging_app.dir/build.make CMakeFiles/Logging_app.dir/src/SafeFile.cpp.s
+.PHONY : src/SafeFile.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -264,12 +312,18 @@ help:
 	@echo "... src/FileSinkImpl.o"
 	@echo "... src/FileSinkImpl.i"
 	@echo "... src/FileSinkImpl.s"
+	@echo "... src/FileTelemetrySourceImpl.o"
+	@echo "... src/FileTelemetrySourceImpl.i"
+	@echo "... src/FileTelemetrySourceImpl.s"
 	@echo "... src/LogManager.o"
 	@echo "... src/LogManager.i"
 	@echo "... src/LogManager.s"
 	@echo "... src/LogMessage.o"
 	@echo "... src/LogMessage.i"
 	@echo "... src/LogMessage.s"
+	@echo "... src/SafeFile.o"
+	@echo "... src/SafeFile.i"
+	@echo "... src/SafeFile.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
