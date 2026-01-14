@@ -1,3 +1,0 @@
-/home/yasmine/Desktop/Linux_Project/build/CMakeFiles/Logging_app.dir
-/home/yasmine/Desktop/Linux_Project/build/CMakeFiles/edit_cache.dir
-/home/yasmine/Desktop/Linux_Project/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,52 @@
+# =========================
+# Build artifacts
+# =========================
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# =========================
+# Executables
+# =========================
+Logging_app
+*.out
+*.exe
+
+# =========================
+# Object / dependency files
+# =========================
+*.o
+*.obj
+*.a
+*.so
+
+# =========================
+# Editor / IDE files
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS-generated files
+# =========================
+*~
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs / runtime output
+# =========================
+*.log
+shell_logs
+
+# =========================
+# Debugging / core dumps
+# =========================
+core
+core.*
