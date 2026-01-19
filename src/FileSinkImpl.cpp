@@ -8,7 +8,7 @@ void FileSinkImpl::filePath(const std::string filepath) {
 }
 
 void FileSinkImpl::writeMessage(const LogMessage &msg) {
-  fd = open(path.c_str(), O_WRONLY);
+  fd = open(path.c_str(), O_WRONLY | O_APPEND | O_CREAT, 0644);
   if (fd < 0) {
     perror("Couldn't open file:(");
     return;

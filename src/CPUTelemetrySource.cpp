@@ -39,6 +39,6 @@ bool CPUTelemtrySourceImpl::readSource(std::string &out) {
 
   double load = (static_cast<double>(busy) / total) * 100.0;
 
-  out = "CPU Load: " + std::to_string(load) + "%\n";
+  out = std::to_string(load);
   return true;
 }

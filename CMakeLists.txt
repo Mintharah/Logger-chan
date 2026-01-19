@@ -18,7 +18,9 @@ add_executable(Logging_app
             src/FileTelemetrySourceImpl.cpp
             src/SafeFile.cpp
             src/CPUTelemetrySource.cpp
-            src/MemTelemetrySourceImpl.cpp)
+            src/MemTelemetrySourceImpl.cpp
+            src/Common.cpp
+            src/LogSinkFactory.cpp)
 
 target_include_directories(Logging_app PRIVATE ${PROJECT_SOURCE_DIR}/inc)
 
