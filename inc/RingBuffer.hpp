@@ -1,6 +1,7 @@
 #ifndef RINGBUFFER_HPP
 #define RINGBUFFER_HPP
 
+#include <mutex>
 #include <optional>
 #include <vector>
 
@@ -10,6 +11,7 @@ private:
   size_t head;
   size_t tail;
   bool full;
+  mutable std::mutex mx;
 
 public:
   explicit RingBuffer(size_t size)
@@ -24,6 +26,8 @@ public:
   RingBuffer &operator=(RingBuffer &&) = default;
 
   bool tryPush(T &&item) {
+    std::lock_guard<std::mutex> lock(mx);
+
     if (full) {
       return false;
     }
@@ -35,6 +39,8 @@ public:
   }
 
   bool tryPop(T &item) {
+    std::lock_guard<std::mutex> lock(mx);
+
     if (isEmpty()) {
       return false;
     }
@@ -51,8 +57,15 @@ public:
     return (!full && (head == tail));
   }
 
-  bool isFull() const {
-    return full;
+  bool isFull() const { return full; }
+
+  size_t size() const {
+    //std::lock_guard<std::mutex> lock(mx);
+    if (full)
+      return buffer.size();
+    if (tail >= head)
+      return tail - head;
+    return buffer.size() - head + tail;
   }
 };
 
