@@ -41,7 +41,7 @@ public:
   bool tryPop(T &item) {
     std::lock_guard<std::mutex> lock(mx);
 
-    if (isEmpty()) {
+    if (isEmptyUnlocked()) {
       return false;
     }
 
@@ -54,13 +54,21 @@ public:
   }
 
   bool isEmpty() const {
+    std::lock_guard<std::mutex> lock(mx);
+    return (!full && (head == tail));
+  }
+  
+  bool isEmptyUnlocked() const {
     return (!full && (head == tail));
   }
 
-  bool isFull() const { return full; }
+  bool isFull() const {
+    std::lock_guard<std::mutex> lock(mx);
+    return full;
+  }
 
   size_t size() const {
-    //std::lock_guard<std::mutex> lock(mx);
+    std::lock_guard<std::mutex> lock(mx);
     if (full)
       return buffer.size();
     if (tail >= head)

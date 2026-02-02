@@ -1,7 +1,8 @@
 #include "LogManager.hpp"
 
 void LogManager::addSink(std::unique_ptr<ILogSink> sink) {
-  LogManager::sinks.push_back(std::move(sink));
+  std::lock_guard<std::mutex> lock(mtx);
+  sinks.push_back(std::move(sink));
 }
 
 void LogManager::log(LogMessage &&msg) {
@@ -13,14 +14,31 @@ void LogManager::log(LogMessage &&msg) {
 void LogManager::workerLoop() {
   LogMessage msg;
 
-  while (running || !buffer.isEmpty()) {
-    if (buffer.tryPop(msg)) {
-      for (auto &sink : sinks) {
+  while (true) {
+    { /* sleep unless the thread is stopped or the buffer is not empty (: */
+      std::unique_lock<std::mutex> uL(mtx);
+      cv.wait(uL, [&]() { return (!running || !buffer.isEmpty()); });
+    }
+
+    /* create a local sink buffer holding pointers to sink */
+    std::vector<ILogSink*> localSinks; 
+    {
+      std::lock_guard<std::mutex> lock(mtx);
+      for(auto &s : sinks){
+        localSinks.push_back(s.get());
+      }
+    }
+
+    /* drain all available messsages */
+    while (buffer.tryPop(msg)) {
+      for (auto &sink : localSinks) { /* used localSink buffer to not lock the mtx for long and avoid deadlocks (: */
         sink->writeMessage(msg);
       }
-    } else {
-      std::unique_lock<std::mutex> lock(mtx);
-      cv.wait(lock);
+    }
+
+    /* exit only when the thread is stopped */
+    if (!running && buffer.isEmpty()) {
+      break;
     }
   }
 }
