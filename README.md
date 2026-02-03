@@ -111,6 +111,7 @@ Builder: Step by step construction of complex objects (LogManager)
 Factory: Creates sinks based on configuration
 Adapter: Wraps various telemetry sources into a common interface
 Producer/Consumer: Ring buffer + worker thread for async logging
+
 ---
 ### Extending this Project
 Add a new telemetry source
