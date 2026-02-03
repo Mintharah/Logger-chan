@@ -47,6 +47,7 @@ The executable will be:
 ```
 ./build/Logging_app
 ```
+---
 ### Configuration
 
 Logger-chan uses a config.json file to enable/disable sources, set logging intervals, and define sink behavior.
@@ -67,6 +68,7 @@ Example config.json:
   }
 }
 ```
+---
 ### Usage
 Run the Logger
 ```
@@ -101,6 +103,7 @@ while (( $(date +%s) - START_TIME < DURATION )); do
     sleep "$INTERVAL"
 done
 ```
+---
 ### Design Pattern Usage
 Pattern	Purpose
 Facade:	Simplifies application setup and execution behind a single interface
@@ -108,7 +111,7 @@ Builder: Step by step construction of complex objects (LogManager)
 Factory: Creates sinks based on configuration
 Adapter: Wraps various telemetry sources into a common interface
 Producer/Consumer: Ring buffer + worker thread for async logging
-
+---
 ### Extending this Project
 Add a new telemetry source
 1. Create a class inheriting ITelemetrySource
@@ -119,9 +122,9 @@ Add a new sink type
 1. Create a class implementing ILogSink
 2. Override writeMessage(LogMessage&)
 3. Update LogManagerBuilder/Factory
-
+---
 ### License
 Distributed under the MIT License — see LICENSE for details.
-
+---
 ### Acknowledgments
 This project uses JSON for Modern C++ for configuration parsing and was developed with a focus on extensible systems design and performance-oriented logging mechanics.
