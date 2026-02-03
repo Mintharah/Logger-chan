@@ -1,0 +1,23 @@
+{
+  "logging": {
+    "buffer_size": 1024,
+    "rate_ms": 100
+  },
+  "sinks": {
+    "console": true,
+    "file": {
+      "enabled": true,
+      "path": "/home/yasmine/Desktop/logs.txt"
+    }
+  },
+  "telemetry_sources": {
+    "cpu": {
+      "enabled": true,
+      "rate_ms": 500
+    },
+    "someip": {
+      "enabled": false,
+      "rate_ms": 1000
+    }
+  }
+}
