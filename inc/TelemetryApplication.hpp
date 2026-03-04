@@ -5,23 +5,24 @@
 #include "LogManager.hpp"
 #include <atomic>
 #include <memory>
+#include <nlohmann/json.hpp>
 #include <thread>
 #include <vector>
-#include <nlohmann/json.hpp>
-
 
 class TelemetryApplication {
-    private:
-    void loadConfig(const std::string& path);
-    void setUpLogManager(void);
-    void setUpTelemetrySources(void);
-    void telemetryLoop(std::unique_ptr<ITelemetrySource> source, int rateMs);
+private:
+  void loadConfig(const std::string &path);
+  void setUpLogManager(void);
+  void setUpTelemetrySources(void);
+  void telemetryLoop(
+      std::unique_ptr<ITelemetrySource> source, int rateMs,
+      std::function<std::optional<LogMessage>(std::string &)> formatter);
 
-    nlohmann::json config; /* creates a json object */
-    std::unique_ptr<LogManager> logManager;
-    std::vector<std::thread> telemetryThreads;
-    std::atomic<bool> running{true};
-    
+  nlohmann::json config; /* creates a json object */
+  std::unique_ptr<LogManager> logManager;
+  std::vector<std::thread> telemetryThreads;
+  std::atomic<bool> running{true};
+
 public:
   TelemetryApplication(const std::string &configPath);
   ~TelemetryApplication();

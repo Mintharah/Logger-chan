@@ -5,7 +5,7 @@
 
 enum class LogSinkType_enum { CONSOLE, FILE, SOCKET };
 enum class SeverityLvl_enum { CRITICAL, WARNING, INFO };
-enum class TelemetrySrc_enum { CPU, GPU, RAM };
+enum class TelemetrySrc_enum { CPU, GPU, RAM, SOMEIP };
 
 std::string toStringSeverity(SeverityLvl_enum lvl);
 std::string toStringSrc(TelemetrySrc_enum src);

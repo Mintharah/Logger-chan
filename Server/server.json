@@ -1,0 +1,27 @@
+{
+  "unicast": "192.168.1.40",
+  "logging": {
+    "level": "debug",
+    "console": true
+  },
+  "applications": [
+    {
+      "name": "Telemetry_Server",
+      "id": "0x1111"
+    }
+  ],
+  "services": [
+    {
+      "service": "0x1234",
+      "instance": "0x5678",
+      "unreliable": 30501
+    }
+  ],
+  "routing": "Telemetry_Server",
+  "service-discovery": {
+    "enable": true,
+    "multicast": "224.224.224.1",
+    "port": 30490,
+    "protocol": "udp"
+  }
+}

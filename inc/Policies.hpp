@@ -43,4 +43,17 @@ struct GpuPolicy {
   }
 };
 
+struct SomeIPPolicy {
+  static constexpr TelemetrySrc_enum context = TelemetrySrc_enum::SOMEIP;
+  static constexpr std::string_view unit = "ms";
+  static constexpr float WARNING = 100.0f;
+  static constexpr float CRITICAL = 200.0f;
+
+  static constexpr SeverityLvl_enum inferSeverity(float val) {
+    return (val > CRITICAL)  ? SeverityLvl_enum::CRITICAL
+           : (val > WARNING) ? SeverityLvl_enum::WARNING
+                             : SeverityLvl_enum::INFO;
+  }
+};
+
 #endif

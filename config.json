@@ -12,11 +12,11 @@
   },
   "telemetry_sources": {
     "cpu": {
-      "enabled": true,
-      "rate_ms": 500
+      "enabled": false,
+      "rate_ms": 1000
     },
     "someip": {
-      "enabled": false,
+      "enabled": true,
       "rate_ms": 1000
     }
   }

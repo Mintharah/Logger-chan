@@ -21,6 +21,8 @@ std::string toStringSrc(TelemetrySrc_enum src) {
     return "GPU";
   case (TelemetrySrc_enum::RAM):
     return "RAM";
+  case (TelemetrySrc_enum::SOMEIP):
+    return "SOMEIP";
   default:
     return "UNKNOWN";
   }

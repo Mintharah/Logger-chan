@@ -1,6 +1,7 @@
 #ifndef SOMEIPTELEMETRYSOURCEIMP
 #define SOMEIPTELEMETRYSOURCEIMP
 
+#include "ITelemetrySource.hpp"
 #include <condition_variable>
 #include <functional>
 #include <mutex>
@@ -11,7 +12,7 @@
 #define INSTANCE_ID 0x5678
 #define METHOD_ID 0x0125
 
-class SomeIPTelemetrySourceImpl {
+class SomeIPTelemetrySourceImpl : public ITelemetrySource {
 private:
   void on_availability(vsomeip::service_t service, vsomeip::instance_t instance,
                        bool is_available);
